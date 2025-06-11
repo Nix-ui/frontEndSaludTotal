@@ -1,0 +1,23 @@
+<main>
+  <form [formGroup]="mainForm" (ngSubmit)="onSubmit()">
+    <app-registerpart1
+      *ngIf="currentStep === 1"
+      [formGroup]="step1Form"
+      (nextStep)="nextStep(1)">
+    </app-registerpart1>
+
+    <app-registerpart2
+      *ngIf="currentStep === 2"
+      [formGroup]="step2Form"
+      (nextStep)="nextStep(2)"
+      (prevStep)="prevStep()">
+    </app-registerpart2>
+
+    <app-registerpart3
+      *ngIf="currentStep === 3"
+      [formGroup]="step3Form"
+      (prevStep)="prevStep()"
+      (submitForm)="onSubmit()"> </app-registerpart3>
+
+    </form>
+</main>

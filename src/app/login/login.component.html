@@ -1,0 +1,31 @@
+<div class="login-container">
+  <div class="image-section">
+      <img src="Img/imagenLogin.png" alt="Lobby" />
+  </div>
+
+  <div class="form-section">
+    <h1>Login</h1>
+
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <label for="email">Correo electrónico</label>
+      <input type="email" id="email" formControlName="email" placeholder="Ingresa tu correo" />
+
+      <label for="ci">Número de carnet</label>
+      <input type="text" id="ci" formControlName="ci" placeholder="Ingresa tu carnet" />
+
+      <label for="password">Contraseña</label>
+      <input type="password" id="password" formControlName="password" placeholder="Ingresa tu contraseña" required />
+      <small class="forgot-password">¿Olvidaste tu contraseña?</small>
+
+      <button class="btn-login" type="submit" [disabled]="loginForm.invalid">Iniciar sesión</button>
+      <div class="divider">o</div>
+      <button [routerLink]="['/register']" class="btn-register" type="button">Crear cuenta</button>
+    </form>
+
+    <div class="social-icons">
+      <i class="fa-brands fa-instagram"></i>
+      <i class="fa-brands fa-facebook"></i>
+      <i class="fa-brands fa-whatsapp"></i>
+    </div>
+  </div>
+</div>
